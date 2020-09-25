@@ -13,12 +13,14 @@ provider "aws" {
 }
 
 module "elb-setup" {
+  # Module can be sourced at: https://github.com/kmruddy/terraform-aws-elb-setup
   source = "app.terraform.io/PMM-Organization/elb-setup/aws"
 
   name = var.name
 }
 
 module "elb-approved" {
+  # Module can be sourced at: https://github.com/kmruddy/terraform-aws-elb-approved
   source = "app.terraform.io/PMM-Organization/elb-approved/aws"
 
   name      = var.name
