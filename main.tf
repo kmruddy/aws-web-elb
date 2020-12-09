@@ -14,14 +14,16 @@ provider "aws" {
 
 module "elb-setup" {
   # Module can be sourced at: https://github.com/kmruddy/terraform-aws-elb-setup
-  source = "app.terraform.io/PMM-Organization/elb-setup/aws"
+  source  = "tfe.kmruddy.com/module-org/elb-setup/aws"
+  version = "0.0.1"
 
   name = var.name
 }
 
 module "elb-approved" {
   # Module can be sourced at: https://github.com/kmruddy/terraform-aws-elb-approved
-  source = "app.terraform.io/PMM-Organization/elb-approved/aws"
+  source  = "tfe.kmruddy.com/module-org/elb-approved/aws"
+  version = "0.0.1"
 
   name      = var.name
   sg_id     = module.elb-setup.elb_sg_id
