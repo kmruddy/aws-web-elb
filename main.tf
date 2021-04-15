@@ -33,6 +33,5 @@ module "elb-approved" {
   connection_draining = true
   tag_name            = "BlackFriday"
 
-  count = 1
-
+  count = var.elb_count
 }
